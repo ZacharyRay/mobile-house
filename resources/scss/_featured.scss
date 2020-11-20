@@ -1,0 +1,75 @@
+.featured {
+  .post {
+    .thumb {
+      .svg-pattern-secondary {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 25%;
+      }
+    }
+  }
+
+  .post.primary {
+    .thumb {
+      height: calc((100vw - (#{map-get($distance, body-padding)} * 2)) * .565);
+      min-height: 250px;
+    }
+  }
+
+  .post.secondary {
+    .thumb {
+      height: calc((100vw - (#{map-get($distance, body-padding)} * 2)) * .565);
+      min-height: 250px;
+
+      @include min-screen(1200px) {
+        height: calc((50vw - (#{map-get($distance, body-padding)} * 2)) * .645);
+      }
+    }
+  }
+
+  .post.tertiary {
+    .thumb {
+      height: calc((100vw - (#{map-get($distance, body-padding)} * 2)) * .565);
+      min-height: 250px;
+
+      @include min-screen(1200px) {
+        height: calc((50vw - (#{map-get($distance, body-padding)} * 2)) * .96);
+      }
+    }
+  }
+}
+
+.has-sidebar {
+  .featured {
+    .post.primary {
+      .thumb {
+        height: calc((100vw - (#{map-get($distance, body-padding)} * 2) - 403px) * .565);
+      
+        @include min-screen(1440px) {
+          height: calc((66.66666vw - (#{map-get($distance, body-padding)} * 2)) * .565);
+        }
+      }
+    }
+  
+    .post.secondary {
+      .thumb {
+        height: calc((50vw - (#{map-get($distance, body-padding)} * 2) - 403px) * .645);
+      
+        @include min-screen(1440px) {
+          height: calc((33.33333vw - (#{map-get($distance, body-padding)} * 2)) * .645);
+        }
+      }
+    }
+  
+    .post.tertiary {
+      .thumb {
+        height: calc((50vw - (#{map-get($distance, body-padding)} * 2) - 403px) * .96);
+      
+        @include min-screen(1440px) {
+          height: calc((33.33333vw - (#{map-get($distance, body-padding)} * 2)) * .96);
+        }
+      }
+    }
+  }
+}

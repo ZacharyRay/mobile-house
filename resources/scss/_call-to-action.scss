@@ -1,0 +1,61 @@
+.cta {
+  transition: all .5s ease;
+
+  @include max-screen(500px) {
+    display: none;
+  }
+  @include max-screen(991px) {
+    padding: 160px 15px;
+  }
+
+  h4 {
+    svg {
+      margin: -5px 0 0 30px;
+      height: auto;
+      width: 42px;
+    }
+  }
+
+  &:hover {
+    background: darken(map-get($colors, red-1), 8%);
+
+    svg.svg-download {
+      polygon {
+        -webkit-animation: dive 1.2s infinite; /* Safari 4+ */
+        -moz-animation:    dive 1.2s infinite; /* Fx 5+ */
+        -o-animation:      dive 1.2s infinite; /* Opera 12+ */
+        animation:         dive 1.2s infinite; /* IE 10+, Fx 29+ */
+      }
+    }
+  }
+
+  &--contact {
+    .thumb {
+      max-width: 200px;
+
+      svg {
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 81px;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes dive {
+  0%     { transform: translateY(0); }
+  100%    { transform: translateY(27px); }
+}
+@-moz-keyframes dive {
+  0%     { transform: translateY(0); }
+  100%    { transform: translateY(27px); }
+}
+@-o-keyframes dive {
+  0%     { transform: translateY(0); }
+  100%    { transform: translateY(27px); }
+}
+@keyframes dive {
+  0%     { transform: translateY(0); }
+  100%    { transform: translateY(27px); }
+}

@@ -1,0 +1,55 @@
+.accordions {
+  .accordion {
+    border-bottom: 1px solid rgba(44, 40, 49, .1);
+    max-width: 873px;
+
+    .toggle {
+      opacity: .6;
+      transition: all .5s ease;
+
+      img {
+        transition: all .5s ease;
+      }
+    }
+
+    .body {
+      display: none;
+    }
+
+    &:hover,
+    &--active {
+      .toggle {
+        opacity: 1;
+      }
+    }
+
+    &--active {
+      .toggle {
+        img {
+          transform: rotate(45deg);
+        }
+      }
+
+      .body {
+        display: block;
+      }
+    }
+  }
+}
+
+.single-post {
+  .accordions.px-body {
+    padding-left: calc(#{map-get($distance, body-padding)} + 40px)!important;
+    padding-right: calc(#{map-get($distance, body-padding)} + 40px)!important;
+
+    @include max-screen(1200px) {
+      padding-left: map-get($distance, body-padding-sm)!important;
+      padding-right: map-get($distance, body-padding-sm)!important;
+    }
+    
+    @include max-screen(767px) {
+      padding-left: map-get($distance, body-padding-xs)!important;
+      padding-right: map-get($distance, body-padding-xs)!important;
+    }
+  }
+}

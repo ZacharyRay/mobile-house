@@ -1,0 +1,88 @@
+.testimonial {
+  .content {
+    padding: 200px 0 110px map-get($distance, body-padding) * 2!important;
+    position: relative;
+    z-index: 1;
+
+    @include max-screen(1200px) {
+      padding: 200px 0 110px map-get($distance, body-padding)!important;
+    }
+
+    @include max-screen(767px) {
+      padding: 200px 15px 110px 15px!important;
+    }
+
+    .pattern-top {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(90deg);
+
+      &-red {
+        position: absolute;
+        right: -67px;
+        top: -66px;
+      }
+    }
+
+    .pattern-bottom {
+      position: absolute;
+      left: 70px;
+      bottom: -1px;
+
+      @include max-screen(1200px) {
+        left: 5px;
+        bottom: -1px;
+      }
+
+      &-red {
+        position: absolute;
+        left: -63px;
+        bottom: -133px;
+        transform: rotate(90deg);
+      }
+    }
+    
+    .slide {
+      width: 100%;
+
+      .body {
+        max-width: calc(650px + #{map-get($distance, body-padding)});
+        padding-right: map-get($distance, body-padding);
+
+        @include max-screen(767px) {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    span {
+      opacity: .5;
+    }
+  }
+
+  .dots {
+    margin-top: 95px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      opacity: .2;
+
+      &.active {
+        opacity: 1;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.has-sidebar {
+  .testimonial {
+    .content {
+      padding: 200px 0;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.slider-wrapper {
+  .slider {
+    .slides-wrapper {
+      z-index: 1; 
+
+      .slides {  
+        .slide {
+          width: calc(100% - #{map-get($distance, body-padding)});
+        }
+      }
+  
+      .slider-next {
+        top: 50%;
+        transform: translateY(-50%);
+        right: map-get($distance, body-padding);
+        width: 62px;
+        height: 62px;
+        background: map-get($colors, grey-1);
+        @include max-screen(500px){
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .slides-caption {
+    .flickity-slider {
+      > div {
+        width: 100%;
+      }
+    }
+  }
+
+  .dots {
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: map-get($colors, black-1);
+      opacity: .2;
+
+      &.active {
+        background: map-get($colors, red-1);
+        opacity: 1;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.single-post {
+  .slider-wrapper.pl-body {
+    padding-left: 0!important;
+
+    @include max-screen(767px) {
+      padding-left: map-get($distance, body-padding-xs)!important;
+      padding-right: map-get($distance, body-padding-xs)!important;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+    "key": "group_5de766aec2dc9",
+    "title": "Settings",
+    "fields": [
+        {
+            "key": "field_5de766b5fcb47",
+            "label": "Background",
+            "name": "bg",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-white": "White",
+                "bg-red-1": "Red",
+                "bg-blue-1": "Blue",
+                "bg-grey-1": "Grey 1",
+                "bg-grey-2": "Grey 2",
+                "bg-grey-3": "Grey 3",
+                "bg-grey-4": "Grey 4",
+                "bg-grey-5": "Grey 5",
+                "bg-grey-6": "Grey 6"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "layout\/contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1581411036
+}

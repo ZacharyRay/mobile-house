@@ -1,0 +1,78 @@
+footer {
+  display: flex;
+
+  @include max-screen(991px) {
+    flex-flow: column;
+  }
+
+  .svg-to-top {
+    position: absolute;
+    right: 90px;
+    top: -40px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .author {
+    min-height: 313px;
+    min-width: map-get($distance, body-padding);
+
+    @include max-screen(991px) {
+      order: 1;
+      min-width: 100%;
+      min-height: 0;
+      padding: 20px 15px;
+    }  
+
+    div {
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      margin-bottom: 90px;
+
+      @include max-screen(991px) {
+        transform: none;
+        margin: 0;
+      }  
+    }
+  }
+
+  .content {
+    padding: 100px 95px 0;
+
+    @include max-screen(991px) {
+      padding: 100px 15px 0;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    .logo {
+      margin-bottom: 90px;
+    }
+
+    label {
+      margin-bottom: 25px;
+    }
+
+    p,
+    ul li a {
+      color: #5E5A60;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .legal {
+      margin-top: 105px;
+      padding: 28px 0;
+      border-top: 1px solid #DAD6CE;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.lead {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p,
+  div {
+    max-width: 873px;
+    font-weight: 300;
+    font-size: 32px;
+    color: map-get($colors, grey-6);
+
+    @include max-screen(767px) {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}
+
+.has-sidebar {
+  .lead {
+    p {
+      padding-right: 30px;
+    }
+  }
+}
+
+.single-post {
+  .lead.px-body {
+    padding-left: calc(#{map-get($distance, body-padding)} + 40px)!important;
+    padding-right: calc(#{map-get($distance, body-padding)} + 40px)!important;
+
+    @include max-screen(1200px) {
+      padding-left: map-get($distance, body-padding-sm)!important;
+      padding-right: map-get($distance, body-padding-sm)!important;
+    }
+    
+    @include max-screen(767px) {
+      padding-left: map-get($distance, body-padding-xs)!important;
+      padding-right: map-get($distance, body-padding-xs)!important;
+    }
+  }
+}

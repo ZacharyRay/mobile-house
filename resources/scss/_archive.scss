@@ -1,0 +1,48 @@
+.archive-default,
+.archive-modules {
+  padding: 200px 0 100px;
+
+  .tag-sidebar {
+    a {
+      position: relative;
+      color: map-get($colors, grey-6);
+      padding-left: 28px;
+      font-size: 14px;
+      margin: 5px 0;
+      
+      span {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #B6B3AF;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 11px;
+        }
+      }
+
+      &.active {
+        color: map-get($colors, red-1);
+
+        span {
+          background: map-get($colors, red-1);
+          border-color: map-get($colors, red-1);
+        }
+      }
+    }
+  }
+
+  .archive-module {
+    .post {
+      .thumb {
+        min-height: 0;
+        background: map-get($colors, grey-2);
+      }
+    }
+  }
+}

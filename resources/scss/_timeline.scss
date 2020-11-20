@@ -1,0 +1,46 @@
+.timeline {
+  h2 {
+    margin-bottom: 40px;
+  }
+  
+  .event {
+    max-width: 490px;
+    border-left: 1px solid map-get($colors, grey-4);
+    position: relative;
+    padding: 35px 0 13px 36px;
+
+    span {
+      position: absolute;
+      border: 3px solid transparent;
+      width: 22px;
+      height: 22px;
+      left: -11px;
+      top: 35px;
+      z-index: 1;
+
+      &:after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: map-get($colors, red-1);
+      }
+    }
+  }
+}
+
+.single-post {
+  .timeline.px-body {
+    padding-left: calc(#{map-get($distance, body-padding)} + 40px)!important;
+    padding-right: calc(#{map-get($distance, body-padding)} + 40px)!important;
+
+    @include max-screen(1200px) {
+      padding-left: map-get($distance, body-padding-sm)!important;
+      padding-right: map-get($distance, body-padding-sm)!important;
+    }
+    
+    @include max-screen(767px) {
+      padding-left: map-get($distance, body-padding-xs)!important;
+      padding-right: map-get($distance, body-padding-xs)!important;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.tables {
+  .row {
+    margin-left: -40px;
+    margin-right: -40px;
+
+    @include max-screen(1300px) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    > div {
+      padding-left: 40px;
+      padding-right: 40px;
+
+      @include max-screen(1300px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+.table {
+  li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(171,169,173,0.3);
+  }
+}

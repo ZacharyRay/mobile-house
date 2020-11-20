@@ -1,0 +1,286 @@
+@each $name, $color in $colors {
+  .bg-#{$name} { background: $color; }
+  .color-#{$name} { color: $color; }
+}
+
+@for $i from 10 through 60 {
+  .fs-xl-#{$i} {
+    @include min-screen(1200px) {
+      font-size: #{$i}px !important;
+    }
+  }
+
+  .fs-lg-#{$i} {
+    @include min-screen(991px) {
+      font-size: #{$i}px !important;
+    }
+  }
+
+  .fs-md-#{$i} {
+    @include min-screen(767px) {
+      font-size: #{$i}px !important;
+    }
+  }
+
+  .fs-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+@for $i from 1 through 10 {
+  .z-#{$i} {
+    z-index: #{$i};
+  }
+
+  .ls-#{$i} {
+    letter-spacing: #{$i}px;
+  }
+
+  .order-#{$i} {
+    order: #{$i};
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.linethrough {
+  text-decoration: line-through;
+}
+
+.min-height-0 {
+  min-height: 0;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-demi {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.component-has-no-bg {
+  padding-bottom: 200px;
+
+  @include max-screen(991px) {
+    padding-bottom: 88px;
+  }
+
+  &.is-first,
+  &.prev-has-bg {
+    padding-top: 200px;
+
+    @include max-screen(991px) {
+      padding-top: 88px;
+    }
+  }
+}
+
+.component-has-bg {
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  @include max-screen(991px) {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+}
+
+.single-module {
+  .component:first-child {
+    margin-bottom: 50px;
+  }
+
+  .component:last-child {
+    margin-top: 150px;
+  }
+
+  .breadcrumb {
+    transform: translateY(-50px);
+    background: none;
+  }
+}
+
+.single-module,
+.single-post {  
+  .component:not(:last-child) {
+    padding-bottom: 50px;
+  }
+}
+
+.is-last {
+  padding-bottom: 400px;
+}
+
+.bg-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.breadcrumb {
+  a {
+    color: map-get($colors, black-1);
+  }
+
+  .breadcrumb_last {
+    color: map-get($colors, red-1);
+  }
+}
+
+.pl-body {
+  padding-left: map-get($distance, body-padding)!important;
+
+  @include max-screen(991px) {
+    padding-left: map-get($distance, body-padding-sm)!important;
+  }
+
+  @include max-screen(767px) {
+    padding-left: map-get($distance, body-padding-xs)!important;
+  }
+}
+
+.pr-body {
+  padding-right: map-get($distance, body-padding)!important;
+
+  @include max-screen(991px) {
+    padding-right: map-get($distance, body-padding-sm)!important;
+  }
+
+  @include max-screen(767px) {
+    padding-right: map-get($distance, body-padding-xs)!important;
+  }
+}
+
+.px-body {
+  padding-left: map-get($distance, body-padding)!important;
+  padding-right: map-get($distance, body-padding)!important;
+
+  @include max-screen(991px) {
+    padding-left: map-get($distance, body-padding-sm)!important;
+    padding-right: map-get($distance, body-padding-sm)!important;
+  }
+
+  @include max-screen(767px) {
+    padding-left: map-get($distance, body-padding-xs)!important;
+    padding-right: map-get($distance, body-padding-xs)!important;
+  }
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+  cursor: pointer;
+  min-width: 315px;
+
+  .current {
+    padding: 18px 67px 18px 27px;
+    background: map-get($colors, grey-3);
+    color: map-get($colors, grey-6);
+
+    .tag {
+      background: #D6D3D0;
+      padding: 5px 28px 5px 7px;
+      font-size: 14px;
+      margin-right: 2px;
+      position: relative;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        width: 12px;
+        height: 1px;
+        background: map-get($colors, black-1);
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:after {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+
+      &:hover {
+        color: map-get($colors, black-1);
+      }
+    }
+  }
+
+  .list {
+    border-top: 1px solid map-get($colors, grey-4);
+    display: none;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background: map-get($colors, grey-3);
+
+    &-item {
+      padding: 12px 27px;
+      color: map-get($colors, grey-6);
+      transition: all .5s ease;
+
+      &:hover {
+        background: #E0DDD9;
+        color: map-get($colors, black-1);
+      }
+
+      &.active {
+        color: map-get($colors, black-1);
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 27px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    z-index: 1;
+    transition: all .3s ease;
+    pointer-events: none;
+  }
+
+  &--active {
+    svg {
+      transform: translateY(-50%);
+    }
+
+    .list {
+      display: block;
+    }
+  }
+
+  &--multiple {
+    width: 536px;
+
+    @include max-screen(767px) {
+      width: 100%;
+    }
+  }
+}

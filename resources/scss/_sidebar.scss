@@ -1,0 +1,55 @@
+.sidebar {
+  position: relative;
+  margin-top: -130px;
+  grid-area: sidebar;
+  padding: 0 0 200px;
+  background: map-get($colors, grey-3);
+  height: calc(100% + 130px);
+
+  @include max-screen(1200px) {
+    margin-top: 0;
+  }
+
+  .body {
+    position: sticky;
+    top: 0;
+    padding-top: 130px;
+
+    .cta {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0 40px;
+      height: 130px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .contact {
+      padding: 90px 100px;
+
+      .thumb {
+        max-width: 250px;
+        
+        svg {
+          position: absolute;
+          right: -1px;
+          bottom: -1px;
+          width: 40%;
+        }
+      }
+
+      a {
+        color: #14293F;
+      }
+    }
+  }
+}
+.single-module {
+  .sidebar {
+    height: 100%;
+    margin-top: 0;
+  } 
+}

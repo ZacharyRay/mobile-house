@@ -1,0 +1,253 @@
+/*
+Theme Name: Abtion Starter Theme
+Theme URI: https://abtion.com/
+Author: Abtion
+Author URI: https://abtion.com/
+Description: WordPress theme developed by <a href="https://abtion.com">Abtion</a>
+Version: 1.0
+Text Domain: abtion
+*/
+
+@font-face {
+	font-family: 'Akkurat';
+	src: url('../fonts/AkkuratLightPro-Regular.woff2') format('woff2'), url('../fonts/AkkuratLightPro-Regular.woff') format('woff');
+	font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Akkurat';
+	src: url('../fonts/AkkuratPro-Regular.woff2') format('woff2'), url('../fonts/AkkuratPro-Regular.woff') format('woff');
+	font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pilat';
+	src: url('../fonts/Pilat-DemiBold.woff2') format('woff2'), url('../fonts/Pilat-DemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PilatWide';
+	src: url('../fonts/PilatWide-DemiBold.woff2') format('woff2'), url('../fonts/PilatWide-DemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PilatWide';
+	src: url('../fonts/PilatWide-Bold.woff2') format('woff2'), url('../fonts/PilatWide-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+// Imports
+@import 'media-queries';
+@import 'animations';
+@import 'var';
+@import 'utility';
+
+html {
+  overflow-x: hidden;
+}
+
+body,
+html {
+  background: map-get($colors, grey-1);
+  color: map-get($colors, black-1);
+  font-family: 'Akkurat';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  @include min-screen(1170px) {
+    max-width: 1140px;
+  }
+
+  @include min-screen(1200px) {
+    max-width: 1322px;
+  }
+}
+
+
+.col-xxl-6 {
+  @include min-screen(1600px) {
+    -ms-flex: 0 0 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+.col-xxl-4 {
+  @include min-screen(1600px) {
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+
+.col-xxl-3 {
+  @include min-screen(1600px) {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.btn {
+  border-radius: 0;
+  cursor: pointer;
+}
+
+h1 {
+  letter-spacing: -.5px;
+  font-size: 60px;
+  font-family: 'PilatWide';
+  font-weight: 700;
+  line-height: 1em;
+}
+
+h2,
+h3 {
+  letter-spacing: .5px;
+  font-family: 'PilatWide';
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 40px;
+
+  @include max-screen(991px) {
+    font-size: 26px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+label {
+  font-size: 10px;
+  font-family: 'Pilat';
+  font-weight: 600;
+  color: map-get($colors, grey-5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+p {
+  color: map-get($colors, grey-6);
+}
+
+a {
+  text-decoration: none;
+  color: map-get($colors, red-1);
+
+  &:hover {
+    text-decoration: none;
+    color: map-get($colors, red-1);
+  }
+}
+
+blockquote {
+  font-family: 'Akkurat';
+  font-weight: 100;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.5;
+  margin: 50px 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 5px;
+    height: calc(100% - 17px);
+    width: 4px;
+    background: map-get($colors, red-1);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-size: 1rem;
+    color: map-get($colors, black-1);
+
+    @include max-screen(767px) {
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+}
+
+input,
+textarea {
+  resize: none;
+  background: map-get($colors, grey-3);
+  padding: 15px 16px;
+  outline: 0;
+  border: 0;
+
+  ::-webkit-input-placeholder { 
+    color: map-get($colors, grey-6);
+  }
+  
+  :-ms-input-placeholder {
+    color: map-get($colors, grey-6);
+  }
+  
+  ::placeholder {
+    color: map-get($colors, grey-6);
+  }
+}
+
+.submit {
+  border: 0;
+  background: none;
+}
+
+@import 'header';
+@import 'hero';
+@import 'lead';
+@import 'editor';
+@import 'table';
+@import 'editor-w-table';
+@import 'slider';
+@import 'single';
+@import 'footer';
+@import 'testimonial';
+@import 'posts';
+@import 'builder';
+@import 'sidebar';
+@import 'featured';
+@import 'editor-w-image';
+@import 'tiles';
+@import 'contact';
+@import 'accordions';
+@import 'call-to-action';
+@import 'editor-columns';
+@import 'selling-points';
+@import 'timeline';
+@import 'archive';
+@import 'collage';
+@import 'inquiry-modal';

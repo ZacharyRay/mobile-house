@@ -1,0 +1,39 @@
+.editor {
+  padding-right: 30px;
+  
+  > div {
+    max-width: 873px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    h6 {
+      color: #9E938A;
+      letter-spacing: 1px;
+      font-size: 11px;
+    }
+  }
+}
+
+.single-post {
+  .editor {
+    h5 {
+      margin-top: 50px;
+    }
+  }
+  .editor.px-body {
+    padding-left: calc(#{map-get($distance, body-padding)} + 40px)!important;
+    padding-right: calc(#{map-get($distance, body-padding)} + 40px)!important;
+
+    @include max-screen(1200px) {
+      padding-left: map-get($distance, body-padding-sm)!important;
+      padding-right: map-get($distance, body-padding-sm)!important;
+    }
+    
+    @include max-screen(767px) {
+      padding-left: map-get($distance, body-padding-xs)!important;
+      padding-right: map-get($distance, body-padding-xs)!important;
+    }
+  }
+}

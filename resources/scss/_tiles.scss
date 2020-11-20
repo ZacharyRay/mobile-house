@@ -1,0 +1,103 @@
+.tiles {
+  .tile {
+    .icon {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: map-get($colors, blue-1);
+      width: 166px;
+      height: 166px;
+      z-index: 2;
+
+      img {
+        top: 20px;
+        left: -20px;
+        -webkit-animation: hover 5s infinite; /* Safari 4+ */
+        -moz-animation:    hover 5s infinite; /* Fx 5+ */
+        -o-animation:      hover 5s infinite; /* Opera 12+ */
+        animation:         hover 5s infinite; /* IE 10+, Fx 29+ */
+      }
+
+      @include max-screen(1200px) {
+        bottom: -83px;
+        top: auto;
+        transform: translateX(-50%);
+      }
+    }
+
+    .body {
+      padding: 183px 30px 100px 30px;
+
+      @include min-screen(1200px) {
+        padding: 50px 70px 50px 135px;
+      }
+
+      h5 {
+        font-size: 20px;
+        color: map-get($colors, grey-6);
+        margin-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: map-get($colors, red-1);
+      }
+    }
+
+    .image {
+      height: calc(50vw * .665);
+      min-height: 250px;
+    }
+  }
+
+  .tile:nth-child(even) {
+    .image {
+      @include min-screen(1200px) {
+        order: 1;
+      }
+    }
+
+    .icon {
+      img {
+        left: auto;
+        right: -20px;
+        bottom: 20px;
+      }
+    }
+
+    .body {
+      @include min-screen(1200px) {
+        padding: 50px 135px 50px 70px;
+      }
+    }
+  }
+}
+
+.has-sidebar {
+  .tiles {
+    .tile {
+      .icon {
+        @include max-screen(1200px) {
+          display: none;
+        }
+      }
+
+      .body {
+        @include max-screen(1200px) {
+          padding: 100px 30px;
+        }
+      }
+    }
+    .tile:nth-child(even) {
+      .image {
+        @include min-screen(991px) {
+          order: 0;
+        }
+
+        @include min-screen(1200px) {
+          order: 1;
+        }
+      }
+    }
+  }
+}
